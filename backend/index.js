@@ -1,21 +1,32 @@
 const express = require("express");
+const app = express();
 const cors = require("cors");
-const User = require("./schemas/data.js")
 const connection = require("./mongoConnection/connection.js")
 const addContact=require('./routes/addcontacts')
 const deleteContact=require('./routes/deletecontact')
-const contact=require("./schemas/data")
-
-
-const app = express();
+const cookieParser = require('cookie-parser')
+const login = require("./routes/login.js")
+const register = require("./routes/signup.js")
+const auth = require("./authentication/authenticate.js")
+const logout = require("./routes/logout.js")
 connection()
-
+app.use(
+    cors({
+      origin: ["http://localhost:3000"],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+      credentials: true,
+    })
+  );
+app.use(express.urlencoded({extended: true}))
+app.use(cookieParser())
+app.use("/api/v1/",login)
+app.use("/api/v1/",register)
+app.get("/api/v1/contacts",auth,(req,res)=>{
+    return res.status(200).json({
+        user:req.user
+    })
+})
+app.use("/api/v1",logout)
 app.use(deleteContact)
-
-
 app.use(addContact)
 app.listen(5000,()=>{console.log("server is up at 5000")})
-
-
-
-
