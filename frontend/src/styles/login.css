@@ -1,0 +1,95 @@
+body{
+    
+    /* background: #F5F5F5; */
+    margin: 0px;
+    padding: 0;
+}
+.loginBox{
+    background:#d6ecf3;
+    height: 80vh;
+    position: fixed;
+    display: flex;
+    /* margin: 100px; */
+    position: inherit;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    border-radius: 22px;
+    box-shadow: 0px 4px 22px #B2DFFF;;
+    
+
+}
+.login{
+    /* align-self: center; */
+    height: 400px;
+width: 500px;
+margin-left: 300px;
+margin-top: 10px;
+/* background-color: #FFFFFF; */
+border-radius: 10px;
+/* border: 2px solid green; */
+
+}
+.text{
+    font-family: 'Open Sans';
+font-size: 15px;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0.25px;
+text-align: center;
+
+}
+.logo{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Open Sans';
+    color: #7D8CC4;
+}
+.usermail{
+    margin-top: 10px;
+    margin-left: 100px;
+    width:300px ;
+    text-align: center;
+    height: 40px;
+}
+.userpassword{
+    margin-top: 10px;
+    margin-left: 100px;
+    width:300px ;
+    text-align: center;
+    height: 40px;
+}
+.usermail,.userpassword:focus{
+    outline: none;
+}
+.signin{
+    margin-left: 280px;
+    margin-top: 10px ;
+    width: 300px;
+    height: 40px;
+    border: none;
+    background-color:#7D8CC4;
+}
+.signup{
+    margin-left: 100px;
+    /* margin-top: 5px ; */
+    width: 300px;
+    height: 40px;
+    background-color:#d6ecf3 ;
+    border: none;
+}
+.lastText{
+    margin-top: 520px;
+    margin-left: -370px;
+}
+.request{
+    color: #352D66;
+    font-family: 'Open Sans';
+    font-size: 18px;
+    
+}
+.errorBox{
+    /* border: 1px solid red; */
+    height: 20px;
+    border: none;
+}

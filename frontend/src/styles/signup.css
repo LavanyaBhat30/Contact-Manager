@@ -1,0 +1,73 @@
+body{
+    /* background: #F5F5F5; */
+    margin: 0px;
+    padding: 0;
+}
+.signupBox{
+    
+background-color:#CEF3FF;
+height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.signUp{
+    /* align-self: center; */
+    height: 500px;
+width: 500px;
+margin-left: 380px;
+margin-top: 70px;
+/* background-color: #FFFFFF; */
+border-radius: 10px;
+/* border: 2px solid green; */
+
+}
+.text1{
+    font-family: 'Open Sans';
+font-size: 15px;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0.25px;
+text-align: center;
+margin-top: 20px;
+
+}
+.Logo{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Open Sans';
+    color:#7D8CC4;
+}
+.mail{
+    margin-top: 40px;
+    margin-left: 100px;
+    width:300px ;
+    text-align: center;
+    height: 40px;
+    color: #E2E2E2;
+}
+.password{
+    margin-top: 30px;
+    margin-left: 100px;
+    width:300px ;
+    text-align: center;
+    height: 40px;
+}
+.cpassword{
+    margin-top: 30px;
+    margin-left: 100px;
+    width:300px ;
+    text-align: center;
+    height: 40px;
+}
+.mail,.password,.cpassword:focus{
+    outline: none;
+}
+.submit{
+    margin-left: 100px;
+    margin-top: 40px ;
+    width: 300px;
+    height: 40px;
+    border: none;
+    color: #FFFFFF;
+    background-color: #4C57B6;
+}
