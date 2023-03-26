@@ -38,7 +38,7 @@ const ImportFile = (props) => {
     try {
       axios
         .post(
-          `https://contact-manager-ch1v.onrender.com/addcontact`,
+          `http://localhost:5000/addcontact`,
           formData,
           {
             headers: {
