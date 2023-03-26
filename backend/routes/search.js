@@ -3,19 +3,17 @@ const router = express.Router() //creates instance router
 const contact = require("../schemas/data")
 const users = require("../schemas/user")
 
-//Attach the handler
-
-
+//Searching the contact
 router.get("/:search", async (req, res) => {
     let search = `^${req.params.search}`
     try {
         const searchedUser = await contact.find({
             userID: req.params.userID,
             
-            $or: [{ email: { $regex: search, $options: "i" } },] //i for case senstivity match
+            $or: [{ email: { $regex: search, $options: "i" } },] 
            
         })
-            .populate(     //provides a reference to document from any other collection
+            .populate(     
                 "userID",
             )
         return res.status(200).json({
