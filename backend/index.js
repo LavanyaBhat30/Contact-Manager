@@ -9,6 +9,9 @@ const login = require("./routes/login.js")
 const register = require("./routes/signup.js")
 const auth = require("./authentication/authenticate.js")
 const logout = require("./routes/logout.js")
+const contactsRoute= require("./routes/contacts") //include contact from routes folder
+const searchRoute = require("./routes/search") //include search from routes folder 
+
 connection()
 app.use(
     cors({
@@ -29,4 +32,7 @@ app.get("/api/v1/contacts",auth,(req,res)=>{
 app.use("/api/v1",logout)
 app.use(deleteContact)
 app.use(addContact)
+app.use('/listcontacts',contactsRoute) 
+app.use('/listcontacts/:userId',searchRoute) 
+
 app.listen(5000,()=>{console.log("server is up at 5000")})
