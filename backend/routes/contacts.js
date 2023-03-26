@@ -2,10 +2,8 @@ const express = require("express") //including express package
 const router = express.Router() //creates instance router
 const contact = require("../schemas/data")
 const users = require("../schemas/user")
-//Attach the handler
 
-
-
+//Get all the contact details
 router.get("/:userId", async (req, res)=>{
     try{
         const listcontacts = await contact.find({ userID: req.params.userID })
