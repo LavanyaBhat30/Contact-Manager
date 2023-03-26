@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+import {Routes,BrowserRouter,Route} from "react-router-dom" 
 import './App.css';
-
+import React from 'react';
+import Main from "./components/Main/Main"
 const App=()=> {
   return(
    <>
