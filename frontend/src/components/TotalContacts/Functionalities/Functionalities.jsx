@@ -9,7 +9,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import exportFile from "./../../images/exportFile.png";
 import ImportFile from "./ImportFile"
 import ImportComplete from "./importComplete"
-import DeleteContactComfirmation from "./DeleteContactComfirmation";
+import DeleteContactComfirmation from "./DeleteContactConfirmation";
 import DeleteSuccessfullyFile from "./DeleteSuccessfullyFile";
 // import ImportFile from "../../ImportFile";
 // import ImportComplete from "../../importComplete";

@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { blue } from "@mui/material/colors";
-import "./DeleteContactComfirmation.css";
+import "./DeleteContactConfirmation.css";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
@@ -14,7 +14,7 @@ const DeleteContactComfirmation = (props) => {
     console.log(props);
     const userid = JSON.parse(localStorage.getItem("userdetails"))._id;
     await axios.delete(
-      `https://contact-manager-ch1v.onrender.com/${userid}`,
+      `http://localhost:5000/${userid}`,
       {
         data: { ids: props.arr },
         headers: {
