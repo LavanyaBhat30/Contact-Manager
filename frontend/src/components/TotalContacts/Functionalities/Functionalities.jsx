@@ -11,10 +11,7 @@ import ImportFile from "./ImportFile"
 import ImportComplete from "./importComplete"
 import DeleteContactComfirmation from "./DeleteContactConfirmation";
 import DeleteSuccessfullyFile from "./DeleteSuccessfullyFile";
-// import ImportFile from "../../ImportFile";
-// import ImportComplete from "../../importComplete";
-// import DeleteContactComfirmation from "../../DeleteContactComfirmation";
-// import DeleteSuccessfullyFile from "../../DeleteSuccessfullyFile";
+
 
 const Functionalities = (props) => {
   const [importFile, setImportFile] = useState(false);
@@ -44,7 +41,7 @@ const Functionalities = (props) => {
         </div>
         <div className="below-header-nav-right">
 
-          {/* =========== DELETE BUTTON ========= */}
+          {/*Delete button */}
           <div className="delete">
             <Button
               style={{ color: "black" }}
@@ -55,7 +52,7 @@ const Functionalities = (props) => {
             </Button>
           </div>
 
-          {/* =========== IMPORT BUTTON ========= */}
+          {/*Import button */}
           <div className="import">
             <Button
               style={{ color: "black" }}
@@ -70,7 +67,7 @@ const Functionalities = (props) => {
             </Button>
           </div>
 
-          {/* =========== EXPORT BUTTON ========= */}
+          {/* Export button */}
           <div className="export">
             <Button style={{ color: "black", padding: "4px" }}>
               <img src={exportFile} alt="exportFile" />
@@ -79,7 +76,7 @@ const Functionalities = (props) => {
           </div>
         </div>
 
-        {/* ============= TRIGGERING IMPORT FILE POP ======= */}
+        {/*  Import file pop */}
         <div className="importFile">
           <ImportFile
             trigger={importFile}
@@ -89,12 +86,12 @@ const Functionalities = (props) => {
           ></ImportFile>
         </div>
 
-        {/* ============ TRIGGERING IMPORT COMPLETE POP UP ===== */}
+        {/*   Import complete pop up = */}
         <div className="importFile">
           <ImportComplete trigger2={importComplete}></ImportComplete>
         </div>
 
-        {/*  ========== TRIGGERING DELETE CONFIRMATION POP UP ==== */}
+        {/*   Delete confirmation pop up  */}
         <div className="deletefile">
           <DeleteContactComfirmation
             trigger3={deletefile}
@@ -106,7 +103,7 @@ const Functionalities = (props) => {
           />
         </div>
 
-        {/*  ========== TRIGGERING DELETE SUCCESS POP UP */}
+        {/*    Delete success pop up */}
         <div className="deletefile">
           <DeleteSuccessfullyFile 
             trigger4={deleteSuccess} 

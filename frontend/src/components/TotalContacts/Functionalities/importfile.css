@@ -1,37 +1,40 @@
-.container-2 {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     height: 100vh;
   }
-  .box-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+  .box {
+    text-align: center;
     width: 200px;
-    height: 200px;
     border-radius: 10px;
     position: absolute;
-    padding: 1em;
+    padding:1em;
     top: 30%;
     box-shadow: 0px 4px 22px #dae3e9;
     background-color: #FFFFFF;
   }
+  .icon{
+      border-radius: 30px;
+      background-color: #2DA5FC80;
+      padding: 5px;
+      margin-top: .5em;
+  }
+  .text-head{
+      font-size: 18px;
+      font-weight: 500;
+      margin-top: 0.2em;
+  }
+  .drop{
+      font-size: 14px;
+      font-weight: 300;
+      text-decoration: underline;
+      text-decoration-color: #2DA5FC;
+      color: #2DA5FC;
+  }
+  .btn{
+      margin-bottom: 1em;
+  }
   
-  .text-head-2 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 1em;
-  }
-  .drop-2 {
-    font-size: 14px;
-    font-weight: 400;
-    text-decoration-color: #2da5fc;
-    color: #2da5fc;
-  }
-  .btn {
-    margin-bottom: 1em;
-  }
   

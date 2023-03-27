@@ -1,7 +1,7 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { blue } from "@mui/material/colors";
-import "./DeleteContactConfirmation.css";
+import "./DeleteContactComfirmation.css";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
@@ -41,7 +41,7 @@ const DeleteContactComfirmation = (props) => {
               className="sucess"
             />
             <h4 className="text-head-3">Delete Contacts</h4>
-            <h5 className="drop-3">Do you want delete this Contacts ?</h5>
+            <h5 className="drop-3">Sure you want delete this Contacts ?</h5>
             <div style={{ display: "inline-block" }}>
               <Button onClick={hide} className="cancel" variant="contained">
                 Cancel
