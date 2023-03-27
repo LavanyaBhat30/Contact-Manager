@@ -9,7 +9,7 @@ import { red, blue } from "@mui/material/colors";
 import EditIcon from "@mui/icons-material/Edit";
 import Tooltip from "@mui/material/Tooltip";
 import DeleteContactComfirmation from "./Functionalities/DeleteContactComfirmation";
-// import DeleteContactComfirmation from "../DeleteContactComfirmation";
+
 
 //    TOOL-TIP IMPLEMENTATION
 
@@ -59,7 +59,7 @@ const TotalContacts = (props) => {
 
   const fetchData = async () => {
     let result = await axios.get(
-      `http://localhost:5000/allcontacts/${userId}`,
+      `https://contact-manager-ch1v.onrender.com/allcontacts/${userId}`,
       {
         headers: {
           Authorization: token,
@@ -99,7 +99,7 @@ const TotalContacts = (props) => {
         <thead className="thead">
           <tr>
             <th scope="col">
-            {/* //=========== HANDELLING HEADER CHECKBOX ======= */}
+            {/* // Header checkbox */}
               <input
                 type="checkbox"
                 onChange={(e) => {
@@ -136,8 +136,7 @@ const TotalContacts = (props) => {
             return (
               <tr key={data._id}>
                 <td>
-                {/* //=================  HANDELLING INDIVISUAL CHECKBOXES ========
-                //----------- binding states of checkboxes with its particular ids ----- */}
+                {/* // Handling individual checkboxes and binding them with its id */}
                   <input
                     onChange={(event) => {
                       let checked = event.target.checked;
@@ -172,7 +171,7 @@ const TotalContacts = (props) => {
                 <td>{data.company}</td>
                 <td>{data.industry}</td>
 
-                {/* //===============  TOOL-TIP HANDELLING =========== */}
+                {/* // Tooltip handeling */}
                 <LightTooltip
                   placement="bottom"
                   title={data.email}
@@ -181,7 +180,7 @@ const TotalContacts = (props) => {
                 >
                   <td className="email">{data.email}</td>
                 </LightTooltip>
-                {/* //================================================ */}
+                {/* //-----------------------------*/}
                 <td>{data.phonenumber}</td>
                 <td>{data.category}</td>
                 <td>

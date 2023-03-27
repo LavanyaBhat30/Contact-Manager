@@ -1,7 +1,7 @@
 import React from "react";
 import { blue } from "@mui/material/colors";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import "./importCompleted.css";
+import "./importompleted.css";
 
 const ImportComplete = (props) => {
   return props.trigger2 ? (
