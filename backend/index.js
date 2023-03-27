@@ -1,38 +1,26 @@
 const express = require("express");
-const app = express();
+const conn = require("./connection/conn");
 const cors = require("cors");
-const connection = require("./mongoConnection/connection.js")
 const addContact=require('./routes/addcontacts')
 const deleteContact=require('./routes/deletecontact')
-const cookieParser = require('cookie-parser')
-const login = require("./routes/login.js")
-const register = require("./routes/signup.js")
-const auth = require("./authentication/authenticate.js")
-const logout = require("./routes/logout.js")
-const contactsRoute= require("./routes/contacts") //include contact from routes folder
-const searchRoute = require("./routes/search") //include search from routes folder 
+const registerRoute = require("./routes/register");
+const logInRoute = require('./routes/Login')
+const allcontact = require("./routes/getAllContacts")
+const searchByEmail = require("./routes/searchByEmail")
+const app = express();
+let port =process.env.PORT ||  5000;
+conn();
 
-connection()
-app.use(
-    cors({
-      origin: ["http://localhost:3000"],
-      methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-      credentials: true,
-    })
-  );
-app.use(express.urlencoded({extended: true}))
-app.use(cookieParser())
-app.use("/api/v1/",login)
-app.use("/api/v1/",register)
-app.get("/api/v1/contacts",auth,(req,res)=>{
-    return res.status(200).json({
-        user:req.user
-    })
-})
-app.use("/api/v1",logout)
-app.use(deleteContact)
+app.use(cors());
+app.use(registerRoute);
+app.use(logInRoute)
 app.use(addContact)
-app.use('/listcontacts',contactsRoute) 
-app.use('/listcontacts/:userId',searchRoute) 
+app.use(deleteContact)
+app.use(allcontact)
+app.use(searchByEmail)
 
-app.listen(5000,()=>{console.log("server is up at 5000")})
+app.use('/',(req,res)=>{
+    res.send('working fine')
+})
+
+app.listen(port, () => console.log(`app running on port ${port}`));
