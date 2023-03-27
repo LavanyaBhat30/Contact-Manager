@@ -2,8 +2,13 @@ import {useState} from "react"
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import "../styles/login.css"
-// import dots from "../images/dots.png"
-import Circle from "./circles";
+import dots from "../images/dots.png"
+import ecllipse from "../images/ecllipse.png"
+import { useEffect } from "react";
+import ecllipse1 from "../images/ecllipse1.png"
+import {Icon} from "react-icons-kit"
+import {eye} from "react-icons-kit/feather/eye"
+import {eyeOff} from "react-icons-kit/feather/eyeOff"
 
 const Login = () =>{
     let flag = 1
@@ -12,7 +17,17 @@ const Login = () =>{
     const [error,errorMess] = useState({email:{isValid:true,message:""},password:{isValid:true,message:""}})
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
-    
+    const [icon,setIcon] = useState(eyeOff)
+    const [type,setType] = useState("password")
+    const handleToggle = ()=>{
+        if(type==="password"){
+            setIcon(eye);
+            setType("text")
+        }else{
+            setIcon(eyeOff);
+            setType("password")
+        }
+    }
     // const [passwordType,setPasswordType] = useState(password)
     async function handleSignIn(e){
         let formData = new FormData();
@@ -95,20 +110,26 @@ const Login = () =>{
             <h1 className="logo">Logo</h1><br/>
             <p className="text">Enter your credentials to access your account</p>
             <div id = "forms">
-                {/* <img src={dots} alt = "dots"/> */}
+                <img src={dots} className="dotsImg1" alt = "dots"/>
+                <img src={dots} className="dotsImg2" alt = "dots"/>
+                <img src={ecllipse} className="ecllipseimg1" alt = "dots"/>
+                <img src={ecllipse1} className="ecllipseimg2" alt = "dots"/>
+                {/* <img src={ecllipse} className="ecllipseimg2" alt = "dots"/> */}
                 <input type = "email" placeholder="User Id" onChange={(e)=>setEmail(e.target.value)} className="usermail" value = {email} onBlur={(event)=> {checkErrors("email")}}/><br/><br/>
             {!error.email.isValid ? <div className="errorBox" style={{marginLeft:"100px",color:"orangered"}}>Please enter valid mail id</div>:<div className="errorBox"></div>}
-                <input type = "password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} className="userpassword" value = {password} onBlur={(event)=> {checkErrors("password")}}/><br/><br/>
-                {!error.password.isValid ? <div className="errorBox"   style={{marginLeft:"100px",color:"orangered"}}>Please Enter Valid Password</div>:<div className="errorBox"></div>}
-                <Circle/>
+            <div className="passwordbox">
+                <input type = {type} placeholder="Password" onChange={(e)=>setPassword(e.target.value)} className="userpassword" value = {password} onBlur={(event)=> {checkErrors("password")}}/> <span onClick={handleToggle}><Icon  className="eye" icon={icon}/></span><br/><br/>
+                {!error.password.isValid ? <div className="errorBox"   style={{marginLeft:"-130px",marginTop:"10px",color:"orangered"}}>Please Enter Valid Password</div>:<div className="errorBox"></div>}
+                {/* <Circle/> */}
+                </div>
                 <button onClick={handleSignIn} className="signin">Sign In </button><br/><br/>
                 <button onClick={handleSignUp} className="signup">Sign Up </button>
                 
             </div>
             
             </div>
-            {/* <Addproperty loginDetails = {token} /> */}
-            <div className="lastText">Don't have an account?Please <span className="request"> Sign Up</span></div>
+        
+            {/* <div className="lastText">Don't have an account?Please <span className="request"> Sign Up</span></div> */}
         </div>
     )
 }
