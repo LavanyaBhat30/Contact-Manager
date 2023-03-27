@@ -9,18 +9,18 @@ const ImportFile = (props) => {
   const navigate = useNavigate();
   const [file, setFile] = useState(null);
 
-//=============== FILE UPLOAD  ===========
+// Uploading file
   const handleFileUpload = (e) => {
     setFile(e.target.files[0]);
   };
 
-//============== FILE DROPED AND DATA TRANSFER ========
+//  File dropped and data transfer
   const handleFileDrop = async (e) => {
     e.preventDefault();
     setFile(e.dataTransfer.files[0]);
   };
 
-//==============  CANCEL THE POP UP CARD ==========
+//  Cancel the pop up
   const Cancel = () => {
     props.setfile(false);
     setFile(null);

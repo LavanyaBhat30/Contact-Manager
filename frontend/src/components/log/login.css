@@ -57,7 +57,7 @@
     border: none;
     background-color:#d6ecf3 ;
     margin: 0em 2em;
-    width: 100px;
+    width: 100%;
 }
 .signUp:hover{
     border: 1px solid #E2E2E2;
