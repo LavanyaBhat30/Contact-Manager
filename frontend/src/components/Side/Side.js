@@ -9,12 +9,14 @@ import { useNavigate } from "react-router-dom";
 const Side = () => {
   const navigate = useNavigate();
 
+  //==============  REMOVAL OF TOKENS AND USER-DETAILS FROM STORAGE ========
   //Removal of user details and tokens from storage
   const handlelogout = () => {
     localStorage.removeItem("userdetails");
     localStorage.removeItem("token");
     navigate("/");
   };
+  //=======================================
  
 
   return (
