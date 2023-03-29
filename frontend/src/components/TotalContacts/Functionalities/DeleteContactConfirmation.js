@@ -14,7 +14,7 @@ const DeleteContactComfirmation = (props) => {
     console.log(props);
     const userid = JSON.parse(localStorage.getItem("userdetails"))._id;
     await axios.delete(
-      `https://contact-manager-ch1v.onrender.com/${userid}`,
+      `https://https://contact-manager-3mec.onrender.com/${userid}`,
       {
         data: { ids: props.arr },
         headers: {
